@@ -6,6 +6,15 @@ import items from './data';
 function App() {
   const [menuItems,setMenuItems] = useState(items);
   const [categories,setCategories] = useState();
+  const filterItems = (category) => {
+    if (category === 'all'){
+      setMenuItems(items);
+      return;
+    }
+
+    const newItems =  items.filter((item) =>item.category === category)
+
+  }
   return <main> 
        <section className="menu section">
          <div className="title">
